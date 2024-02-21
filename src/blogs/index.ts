@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.use("/", blogsRoutes);
 
-module.exports = {
-  blogsRoutes: router,
+export default {
+  router,
   blogsServices,
 };
