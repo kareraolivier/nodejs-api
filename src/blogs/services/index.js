@@ -1,5 +1,6 @@
-// const User = require("../../models");
+const blogRepository = require("../repository");
 
-exports.getAllBlogs = () => {
-  return { name: "karera" };
-};
+const getAllBlogs = async () => await blogRepository.findAll();
+const createBlog = async (blogData) => await blogRepository.create(blogData);
+
+module.exports = { getAllBlogs, createBlog };
