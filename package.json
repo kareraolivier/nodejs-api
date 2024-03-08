@@ -4,8 +4,8 @@
   "description": "this project contains apis which are good",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon --exec ts-node index.ts",
-    "build": "tsc",
+    "start": "node api.js && nodemon --exec ts-node index.ts",
+    "build": "node api.js && tsc",
     "serve": "node dist/server.js"
   },
   "repository": {
