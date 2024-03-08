@@ -1,6 +1,6 @@
-const express = require("express");
-const blogsRoutes = require("./routes");
-const blogsServices = require("./services");
+import express from "express";
+import blogsRoutes from "./routes";
+import blogsServices from "./services";
 const router = express.Router();
 
 router.use("/", blogsRoutes);

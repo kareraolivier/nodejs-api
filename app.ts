@@ -1,7 +1,8 @@
 import express from "express";
+import { Request, Response } from "express";
 const app = express();
 import blogsRoutes from "./src/blogs";
-// const usersRouter = require("./users/routes");
+// import usersRouter from "./users/routes";
 import { noStore } from "./src/middlewares";
 
 app.use(express.json());
@@ -10,7 +11,9 @@ app.use(express.json());
 app.use(noStore);
 
 // Routes
-app.get("/", (_: any, res: any) => res.send("Hello welcome to my blog"));
+app.get("/", (_: Request, res: Response) =>
+  res.send("Hello welcome to my blog")
+);
 app.use("/blogs", blogsRoutes.router);
 // app.use("/users", usersRouter);
 export default app;
