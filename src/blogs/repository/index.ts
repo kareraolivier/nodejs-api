@@ -3,7 +3,9 @@ import BlogModel, { IBlog } from "../../models/blog.model";
 const findAll = async (): Promise<IBlog[]> => {
   return await BlogModel.find({});
 };
-
+const findOne = async (id: string): Promise<IBlog | null> => {
+  return await BlogModel.findOne({ _id: id });
+};
 const create = async (blogData: Partial<IBlog>): Promise<IBlog> => {
   return await BlogModel.create(blogData);
 };
@@ -18,4 +20,4 @@ const update = async (
 const deleteBlog = async (_id: string): Promise<IBlog | null> => {
   return await BlogModel.findByIdAndDelete(_id);
 };
-export default { findAll, create, update, deleteBlog };
+export default { findAll, findOne, create, update, deleteBlog };

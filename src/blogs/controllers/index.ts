@@ -10,6 +10,16 @@ const getAllBlogs = async (_: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const getblogById = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const id = req.params.id;
+    const blogs = await blogsService.getblogById(id);
+    res.json(blogs);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createBlog = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const blogData = req.body;
@@ -38,4 +48,4 @@ const deleteBlog = async (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
-export default { getAllBlogs, createBlog, updateBlog, deleteBlog };
+export default { getAllBlogs, createBlog, updateBlog, deleteBlog, getblogById };
