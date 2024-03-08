@@ -5,7 +5,6 @@ export const noStore = (
   res: Response,
   next: NextFunction
 ): void => {
-  console.log("noStore middleware called");
   res.setHeader("Cache-Control", "no-store");
   next();
 };
